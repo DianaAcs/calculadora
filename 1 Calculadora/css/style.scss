@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition: all 0.8 ease;
+}
+body{
+    background: linear-gradient(45deg, #c59bdd, #dfa0a0);
+}
+.container{
+    height: 100vh;
+    width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.calculator{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgb(136, 67, 107);
+    background-color: rgb(233, 195, 233);
+    #display{
+    color: rgb(0, 0, 0);
+    margin: 0 10px;
+    height: 120px;
+    width: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+#equal{
+    height: 130px;
+}
+#clear{
+    background-color: #ffeded;
+    color: #ff0000;
+}
+.btn-number{
+    background-color: antiquewhite;
+    color: blueviolet;
+}
+.btn-operator{
+    background-color: rgb(207, 141, 207);
+    color: darkslateblue;
+}
+.btn-equal{
+    background-color: #c59bdd;
+    color: #fff9f9;
+}
+/*dark theme*/
+&.dark{
+    background-color: black;
+    #display{
+        color: #ffeded;
+    }
+    #clear{
+        background-color: rgb(133, 5, 253);
+        color:rgb(223, 181, 181)
+    }
+    .btn-number{
+        background-color: aquamarine;
+        color: black;
+        font-weight: 600;
+    }
+    .btn-operator{
+        background-color: rgb(211, 112, 181);
+        color: #682192;
+    }
+    .btn-equal{
+        background-color: #ff0000;
+        color:azure;
+    }
+}
+}
+.theme-toggler{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #c59bdd;
+    cursor: pointer;
+    z-index: 1;
+   &::before{
+
+    content:'';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translate(-50, -50);
+    border-radius: 50%;
+    background-color: #d693e7;
+    z-index: -1;
+   }
+}
+.theme-toggler.active{
+    color: black;
+    &::before {
+        background-color: #c59bdd;
+    }
+}
+button{
+    height: 60px;
+    width: 60px;
+    border:0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
